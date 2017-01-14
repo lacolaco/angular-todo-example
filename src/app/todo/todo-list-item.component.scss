@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    min-height: 16px;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    margin: 8px 0;
+    z-index: 2;
+    box-shadow: 2px 2px #ccc;
+    cursor: pointer;
+
+    .text {
+        padding-left: 16px;
+        font-size: 1.2em;
+        flex: 1;
+        text-align: left;
+    }
+
+    &:hover {
+        background-color: #eee;
+    }
+
+    &.done {
+        background-color: #eee;
+        
+        .text {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+    }
+}
+.remove-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #333;
+        color: white;
+    }
+}

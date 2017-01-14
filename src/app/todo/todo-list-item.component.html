@@ -1,0 +1,9 @@
+<div class="card" [class.done]="todo.done" (click)="toggle()">
+  <div class="checkbox">
+    <input type="checkbox" [(ngModel)]="todo.done">
+  </div>
+  <div class="text">
+    {{ todo.text }}
+  </div>
+  <button type="button" class="remove-btn" style="z-index: 10;" (click)="onRemoveClick($event)">X</button>
+</div>
