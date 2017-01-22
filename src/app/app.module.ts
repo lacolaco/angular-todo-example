@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { RootSharedModule } from './shared/module';
+import { AppStore } from './app.store';
+import { SharedModule } from './shared/module';
 import { TodoModule } from './todo/module';
 
 @NgModule({
@@ -13,11 +14,11 @@ import { TodoModule } from './todo/module';
   ],
   imports: [
     BrowserModule,
-    RootSharedModule,
+    SharedModule.forRoot(),
 
     TodoModule,
   ],
-  providers: [],
+  providers: [AppStore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

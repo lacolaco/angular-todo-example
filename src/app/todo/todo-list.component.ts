@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
-import { Todo } from './todo';
-import { TodoService } from './todo.service';
+import { Todo } from '../shared/models/todo';
+import { TodoStore } from '../shared/stores/todo.store';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,20 +11,17 @@ import { TodoService } from './todo.service';
 })
 export class TodoListComponent implements OnInit {
 
-  todoList: Todo[];
-
-  constructor(private todoService: TodoService) {
+  constructor(protected store: TodoStore) {
   }
 
   ngOnInit() {
-    this.todoService.list().subscribe(list => this.todoList = list);
   }
 
   updateTodo(todo: Todo) {
-    this.todoService.update(todo.id, todo);
+    this.store.update(todo.id, todo);
   }
 
   removeTodo(todo: Todo) {
-    this.todoService.delete(todo.id);
+    this.store.delete(todo.id);
   }
 }

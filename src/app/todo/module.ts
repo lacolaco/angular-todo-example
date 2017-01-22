@@ -5,7 +5,6 @@ import { SharedModule } from '../shared/module';
 import { TodoFormComponent } from './todo-form.component';
 import { TodoListComponent } from './todo-list.component';
 import { TodoListItemComponent } from './todo-list-item.component';
-import { TodoService } from './todo.service';
 
 @NgModule({
   imports: [
@@ -20,8 +19,6 @@ import { TodoService } from './todo.service';
     TodoListComponent,
     TodoFormComponent,
   ],
-  providers: [
-    TodoService,
-  ]
+  providers: []
 })
 export class TodoModule { }

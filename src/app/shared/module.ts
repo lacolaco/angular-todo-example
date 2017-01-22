@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { TodoStore } from './stores/todo.store';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,8 +19,6 @@ export class SharedModule {
   static forRoot() {
     return {
       ngModule: RootSharedModule,
-      providers: [
-      ],
     };
   }
 }
@@ -31,7 +31,7 @@ export class SharedModule {
     SharedModule
   ],
   providers: [
-
+    TodoStore,
   ],
 })
 export class RootSharedModule {

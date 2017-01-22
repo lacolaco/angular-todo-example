@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
-import { Todo } from './todo';
-import { TodoService } from './todo.service';
+import { Todo } from '../shared/models/todo';
+import { TodoStore } from '../shared/stores/todo.store';
 
 @Component({
   selector: 'app-todo-form',
@@ -11,14 +11,14 @@ import { TodoService } from './todo.service';
 })
 export class TodoFormComponent {
 
-  constructor(private todoService: TodoService) { }
+  constructor(private store: TodoStore) { }
 
   submit(form: NgForm) {
     if (form.invalid) {
       return;
     }
     const todo = new Todo(form.value.text);
-    this.todoService.insert(todo);
+    this.store.insert(todo);
     form.reset();
   }
 

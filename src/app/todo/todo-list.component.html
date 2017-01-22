@@ -2,7 +2,7 @@
 
   <div class="todo-list">
 
-    <div class="todo-item" *ngFor="let todo of todoList">
+    <div class="todo-item" *ngFor="let todo of (store.list | async)">
       <app-todo-list-item [todo]="todo" (update)="updateTodo($event)" (remove)="removeTodo($event)"></app-todo-list-item>
     </div>
   </div>
